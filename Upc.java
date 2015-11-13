@@ -33,7 +33,7 @@ public class Upc extends Configured implements Tool {
 		job.setReducerClass(UpcReducer.class);
 
 		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(IntWritable.class);
+		job.setOutputValueClass(Text.class);
 
 		for (int i = 0; i < args.length-1; ++i)
 			FileInputFormat.addInputPath(job, new Path(args[i]));
