@@ -1,4 +1,12 @@
 
+/*********************************************************************************************
+* Author: Claudiu Barzu                        
+* Date: 13/11/2015                             
+* Description: This file is the main class, which we use to configure map reduce and run
+* the program.
+**********************************************************************************************/
+
+
 import java.io.IOException;
 
 import org.apache.hadoop.fs.Path;
@@ -21,8 +29,8 @@ public class Upc extends Configured implements Tool {
 		Job job = Job.getInstance(getConf());
 
 		job.setJarByClass(getClass());
-		job.setMapperClass(WCMapper.class);
-		job.setReducerClass(WCReducer.class);
+		job.setMapperClass(UpcMapper.class);
+		job.setReducerClass(UpcReducer.class);
 
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(IntWritable.class);
